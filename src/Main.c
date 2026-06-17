@@ -22,8 +22,8 @@ Token Handler_Add(void* ParentClass,Token* op,Vector* args){
 
     printf("ADD: %s + %s\n",a->str,b->str);
 
-    Number n1 = Number_Parse(a->str);
-    Number n2 = Number_Parse(b->str);
+    Number n1 = a->v_i64;
+    Number n2 = b->v_i64;
 
     Number res = n1 + n2;
     char* resstr = Number_Get(res);
@@ -35,8 +35,8 @@ Token Handler_Mul(void* ParentClass,Token* op,Vector* args){
 
     printf("MUL: %s * %s\n",a->str,b->str);
 
-    Number n1 = Number_Parse(a->str);
-    Number n2 = Number_Parse(b->str);
+    Number n1 = a->v_i64;
+    Number n2 = b->v_i64;
 
     Number res = n1 * n2;
     char* resstr = Number_Get(res);
@@ -47,7 +47,7 @@ Token Handler_Neg(void* ParentClass,Token* op,Vector* args){
 
     printf("NEG: -%s\n",a->str);
 
-    Number n1 = Number_Parse(a->str);
+    Number n1 = a->v_i64;
 
     Number res = -n1;
     char* resstr = Number_Get(res);
